@@ -11,6 +11,8 @@
     <h1 id="timer">00:00:00:00</h1>
     <h2>dd:hh:mm:ss</h2>
     <img id="repPhoto" src="" style="width: 200px; height: auto;">
+    <img id="repPhoto2" src="" style="width: 200px; height: auto;">
+    <img id="repPhoto3" src="" style="width: 200px; height: auto;">
     <p>not vibecoded this time :)</p>
 
     <script>
@@ -19,6 +21,8 @@
         const timeLabel = document.getElementById("timer");
         const graveyardPhoto = "graveyard.jpg";
         const photo = document.getElementById("repPhoto");
+        const photo2 = document.getElementById("repPhoto2");
+        const photo3 = document.getElementById("repPhoto3");
         function updateTimer() {
             const nowEpoch = new Date().getTime();
             let elapsed = nowEpoch - start;
@@ -31,6 +35,8 @@
             let s = Math.floor(elapsed / 1000);
             if (d >= 21 && photo.src != "graveyard.jpg"){
                 photo.src = "graveyard.jpg";
+                photo2.src = "wasteland.jpg";
+                photo3.src = "";
             }
             timeLabel.textContent =
                 `${String(d).padStart(2, "0")}:` +
