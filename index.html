@@ -10,12 +10,15 @@
     <h1>Days since last heat scrim:</h1>
     <h1 id="timer">00:00:00:00</h1>
     <h2>dd:hh:mm:ss</h2>
+    <img id="repPhoto" src="">
     <p>not vibecoded this time :)</p>
 
     <script>
         // ooo look at this logic :O
         const start = new Date("2026-09-07T22:17:00").getTime();
         const timeLabel = document.getElementById("timer");
+        const graveyardPhoto = "graveyard.jpg";
+        const photo = document.getElementById("repPhoto");
         function updateTimer() {
             const nowEpoch = new Date().getTime();
             let elapsed = nowEpoch - start;
@@ -26,6 +29,9 @@
             let m = Math.floor(elapsed / (1000 * 60));
             elapsed %= 1000 * 60;
             let s = Math.floor(elapsed / 1000);
+            if (d >= 21 && photo.src != "graveyard.jpg"){
+                photo.src = "graveyard.jpg";
+            }
             timeLabel.textContent =
                 `${String(d).padStart(2, "0")}:` +
                 `${String(h).padStart(2, "0")}:` +
