@@ -9,33 +9,29 @@
 <body>
     <h1>Days since last heat scrim:</h1>
     <h1 id="timer">00:00:00:00</h1>
+    <h2>dd:hh:mm:ss</h2>
+    <p>not vibecoded this time :)</p>
 
     <script>
-        const start = new Date("2026-09-07T00:00:00").getTime();
+        // ooo look at this logic :O
+        const start = new Date("2026-09-07T22:17:00").getTime();
         const timeLabel = document.getElementById("timer");
-
         function updateTimer() {
             const nowEpoch = new Date().getTime();
             let elapsed = nowEpoch - start;
-
-            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+            let d = Math.floor(elapsed / (1000 * 60 * 60 * 24));
             elapsed %= 1000 * 60 * 60 * 24;
-
-            const hours = Math.floor(elapsed / (1000 * 60 * 60));
+            let h = Math.floor(elapsed / (1000 * 60 * 60));
             elapsed %= 1000 * 60 * 60;
-
-            const minutes = Math.floor(elapsed / (1000 * 60));
+            let m = Math.floor(elapsed / (1000 * 60));
             elapsed %= 1000 * 60;
-
-            const seconds = Math.floor(elapsed / 1000);
-
+            let s = Math.floor(elapsed / 1000);
             timeLabel.textContent =
-                `${String(days).padStart(2, "0")}:` +
-                `${String(hours).padStart(2, "0")}:` +
-                `${String(minutes).padStart(2, "0")}:` +
-                `${String(seconds).padStart(2, "0")}`;
+                `${String(d).padStart(2, "0")}:` +
+                `${String(h).padStart(2, "0")}:` +
+                `${String(m).padStart(2, "0")}:` +
+                `${String(s).padStart(2, "0")}`;
         }
-
         updateTimer();
         setInterval(updateTimer, 1000);
     </script>
