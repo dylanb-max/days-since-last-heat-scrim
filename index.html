@@ -39,10 +39,10 @@
                 photo3.src = "skeletons.jpg";
             }
             timeLabel.textContent =
-                `${String(d).padStart(2, "0")}:` +
-                `${String(h).padStart(2, "0")}:` +
-                `${String(m).padStart(2, "0")}:` +
-                `${String(s).padStart(2, "0")}`;
+                String(d).padStart(2, "0") + ":" +
+                String(h).padStart(2, "0") + ":" +
+                String(m).padStart(2, "0") + ":" +
+                String(s).padStart(2, "0");
         }
         updateTimer();
         setInterval(updateTimer, 1000);
