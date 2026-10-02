@@ -61,8 +61,11 @@
             const deathct = document.getElementById("deathcount");
             let deaths = elapsedSecs * 2;
             deathct.textContent = deaths + " people have died.";
+
+            const amznct = document.getElementById("amazonpkgs");
+            amznct.textContent = (231 * elapsedSecs) + " amazon packages have been delivered worldwide.";
         }
-        setInterval(updateStats, 1000);
+        setInterval(updateStats, 100);
         setInterval(updateTimer, 1000);
     </script>
 </body>
