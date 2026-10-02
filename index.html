@@ -62,7 +62,7 @@
             let deaths = elapsedSecs * 2;
             deathct.textContent = deaths + " people have died.";
         }
-        
+        setInterval(updateStats, 1000);
         setInterval(updateTimer, 1000);
     </script>
 </body>
