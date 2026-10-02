@@ -13,6 +13,10 @@
     <img id="repPhoto" src="" style="width: 200px; height: auto;">
     <img id="repPhoto2" src="" style="width: 200px; height: auto;">
     <img id="repPhoto3" src="" style="width: 200px; height: auto;">
+    <h3>In that time...</h3>
+    <p1 id="deathcount">0 people have died.</p1>
+    <p1 id="amazonpkgs">0 amazon packages have been delivered.</p1>
+    <h1>MAKE THE SCRIM ALREADY.</h1>
     <p>not vibecoded this time :)</p>
 
     <script>
@@ -51,6 +55,14 @@
                 String(s).padStart(2, "0");
         }
         updateTimer();
+
+        function updateStats(){
+            let elapsedSecs = ( new Date().getTime() - start ) / 1000;
+            const deathct = document.getElementById("deathcount);
+            let deaths = elapsedSecs * 2;
+            deathct.textContent = deaths + " people have died."
+        }
+        
         setInterval(updateTimer, 1000);
     </script>
 </body>
